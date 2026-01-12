@@ -1,0 +1,69 @@
+TITLE
+I125_6711_simulation
+DEFAULTS                                                              PRECISIO
+BEAM            -0.0                                                  ISOTOPE
+HI-PROPE         53.      125.
+BEAMPOS           0.        0.   -0.1225
+BEAMPOS        0.025  0.025175     0.245  0.245175                    CYLI-VOL
+RADDECAY          2.
+GEOBEGIN         0.0                                                  COMBNAME
+    0    0          
+RCC body1      0.0 0.0 -0.1225 0.0 0.0 0.245 0.025
+TRC body2      0.0 0.0 -0.1225 0.0 0.0 -0.0175 0.025 0.0175
+TRC body3      0.0 0.0 0.1225 0.0 0.0 .0175 0.025 .0175
+RCC body4      0.0 0.0 -0.1225 0.0 0.0 0.245 0.025175
+TRC body5      0. 0. -0.1225 0. 0. -0.017675 0.025175 0.017675
+TRC body6      0. 0. 0.1225 0. 0. 0.017675 0.025175 0.017675
+RCC body7      0. 0. -0.1875 0. 0. 0.375 0.033
+RCC body8      0. 0. -0.1875 0. 0. 0.375 0.04
+SPH body9      0. 0. -0.1875 0.04
+SPH body10     0. 0. 0.1875 0.04
+RPP body11     -10.0 10.0 -10.0 10.0 -10.0 10.0
+SPH body12     0.0 0.0 0.0 98.61541461658
+SPH body13     0.0 0.0 0.0 221.41589825485
+END
+REG1         5 +body1
+               | +body2 -body1
+               | +body3
+REG4         5 +body5 -body2
+               | +body4 -body1
+               | +body6 -body3
+REG5         5 +body7 -body4 -body5 -body6
+REG6         5 +body8 -body7
+               | +body9 -body8
+               | +body10 -body8
+REG2         5 +body11 -body8 -body10 -body9
+REG3         5 -body13
+REG7         5 +body13 -body12
+REG8         5 +body12 -body11
+END
+GEOEND                                                                DEBUG
+MATERIAL         53.                4.93                          125.IODINE
+* Silver iodide Ag_I
+*
+MATERIAL                            6.01                              AgI
+COMPOUND   -0.459458    SILVER -0.540542    IODINE                    AgI
+MATERIAL         35.                3.12                              BROMINE
+* Silver bromide Ag_Br
+*
+MATERIAL                           6.473                              AgBr
+COMPOUND   -0.425537   BROMINE -0.574463    SILVER                    AgBr
+MATERIAL                             6.2                              RadMat
+COMPOUND      -0.714       AgI    -0.285      AgBr                    RadMat
+ASSIGNMA      SILVER      REG1
+ASSIGNMA      RadMat      REG4                            9.    IODINE
+ASSIGNMA      VACUUM      REG5
+ASSIGNMA    TITANIUM      REG6
+ASSIGNMA       WATER      REG2
+ASSIGNMA      VACUUM      REG3
+ASSIGNMA    BLCKHOLE      REG7
+ASSIGNMA         AIR      REG8
+ROT-DEFI                   90.      180.
+USRBIN           11.      DOSE      -51.       10.        0.       10.dose
+USRBIN            0.        0.      -10.                 10.           &
+USRBIN           11.   DOSE-EQ      -51.       10.        0.       10.dose-eq
+USRBIN            0.        0.      -10.                 10.           &
+DCYSCORE         -1.                          dose   dose-eq          USRBIN
+RANDOMIZ          1.
+START       1000000.                                      1.
+STOP

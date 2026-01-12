@@ -1,0 +1,38 @@
+Dir: /home/abderrahim/Téléchargements
+Cmd: /usr/bin/nohup /opt/fluka/flutil/rfluka -M 5 I125_6711
+$TARGET_MACHINE = Linux
+$FLUPRO = /opt/fluka
+
+Initial seed copied from /opt/fluka
+Running fluka in /home/abderrahim/Téléchargements/fluka_170922
+================================ Running FLUKA for cycle # 1 =============================================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated     Moving fort.51 to /home/abderrahim/Téléchargements/I125_6711001_fort.51
+
+================================ Running FLUKA for cycle # 2 =============================================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated     Moving fort.51 to /home/abderrahim/Téléchargements/I125_6711002_fort.51
+
+================================ Running FLUKA for cycle # 3 =============================================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated     Moving fort.51 to /home/abderrahim/Téléchargements/I125_6711003_fort.51
+
+================================ Running FLUKA for cycle # 4 =============================================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated     Moving fort.51 to /home/abderrahim/Téléchargements/I125_6711004_fort.51
+
+================================ Running FLUKA for cycle # 5 =============================================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated     Moving fort.51 to /home/abderrahim/Téléchargements/I125_6711005_fort.51
+
+End of FLUKA run

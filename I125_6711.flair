@@ -1,0 +1,165 @@
+#!/usr/local/flair/flair
+# FLUKA Project file
+Version: 2
+Title: I125_6711_simulation
+Input: I125_6711.inp
+Submit: *Default
+Tabs: 0.1 0.32 0.56 0.81 1.0
+Page: Plot
+DefMain: True
+LinkPrg: lfluka
+F77bound: True
+F77dline: False
+
+# Run information
+Run: <default>
+	Prev:     0
+	Last:     5
+	Status:   3
+	Pid:      0
+	StartRun: 1767568432
+
+	# USRxxx data file: I125_6711_51.bnn
+	Data: \I_\U.\e
+		Unit: 51
+		Type: b
+		Rule: +,\I\d\d\d_fort\.\U
+		Rule: +,\I\d\d\d_ftn\.\U
+	End
+End
+
+# Material
+Material: IODINE
+	alpha: 0
+	color: #405090
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: AgI
+	alpha: 0
+	color: #C0D090
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: BROMINE
+	alpha: 0
+	color: #7090D0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: AgBr
+	alpha: 0
+	color: #60B090
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: RadMat
+	alpha: 0
+	color: #6090B0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Geometry Information
+Geometry:
+	Frame.bsplit: 0.5
+	Frame.tsplit: 0.5
+	Frame.vsplit: 0.5
+End
+
+# Geometry plot "Geometry I125_6711_simulation"
+Plot: I125_6711_geometry
+	Format: .eps
+	Type:   Geometry
+	basisu: 1 0 0
+	basisv: 0 0 1
+	boundaries: 0
+	cbcolors: 0
+	cblog: False
+	cbpalette: FLUKA
+	cbround: 0
+	cbtics: 0
+	coord: Y-Z
+	cpd: 0
+	extends: 100 48.2704
+	grid: 0
+	index: 0
+	labels: 0
+	origin: 0 0 0
+	subtype: Geometry
+	title: Geometry I125_6711_simulation
+	x2log: False
+	x2tics: 0
+	xlog: False
+	y2log: False
+	y2tics: 0
+	ylog: False
+	zlog: False
+	ztics: 0
+End
+
+# USRBIN plot "USRBIN I125 6711 51"
+Plot: I125_6711_51_plot
+	Format: .eps
+	Type:   USRBIN
+	axes: Auto
+	bxmax: 10
+	bxmin: 0.
+	bymax: 10.0531
+	bymin: 0
+	bzmax: 0.8
+	bzmin: -1
+	cbcolors: 30
+	cblog: True
+	cbpalette: FLUKA
+	cbround: 0
+	cbtics: 1
+	cpd: 0
+	datafile: I125_6711_51.bnn
+	det: 2
+	errors: 0
+	geo: -Auto-
+	grid: 0
+	hist: 1D Projection
+	index: 0
+	int: 1.0710947219008306E-002
+	lc.0: red
+	lw.0: 0
+	max: 2.19702851E-02
+	min: 1.01695639E-06
+	proj: X
+	ps.0: 1
+	pt.0: 7
+	swap: 0
+	title: USRBIN I125 6711 51
+	with.0: errorbars
+	x2log: False
+	x2tics: 0
+	xlog: False
+	xrebin: 1
+	y2log: False
+	y2tics: 0
+	ylog: False
+	yrebin: 1
+	zlog: False
+	zrebin: 1
+	ztics: 0
+End
