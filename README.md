@@ -23,7 +23,7 @@ Les sorties principales sont :
 
 ### Comparaison aux données expérimentales
 
-Vous pouvez comparer aux valeurs expérimentales du site CLRP en fournissant des CSV locaux contenant les colonnes suivantes :
+Nous pouvons comparer aux valeurs expérimentales du site CLRP en fournissant des CSV locaux contenant les colonnes suivantes :
 
 - `r_cm`, `gL` (pour la comparaison de gL)
 - `theta_deg`, `F` (pour la comparaison de F)
